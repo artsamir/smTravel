@@ -1,0 +1,120 @@
+package testSMTravel;
+
+import java.util.Properties;
+import org.testng.annotations.Test;
+
+import generics.WindowandTabControl;
+import generics.baseTest;
+import pages.SitandPricePage;
+import pages.PassengerDtsPage;
+import pages.PrintTicketPage;
+import pages.FindABusPage;
+
+public class TestBookATicket extends baseTest{
+	FindABusPage fab;
+	Properties pr;
+	SitandPricePage spf;
+	PassengerDtsPage pdp;
+	PrintTicketPage ptp;
+	WindowandTabControl wtc;
+	
+	
+	@Test (priority = 0, enabled = false)
+	public void testsearchbus() throws InterruptedException {
+		
+		pr = new Properties();
+		fab = new FindABusPage(driver);
+		
+		
+		
+		fab.getFromstationclick().click();
+		Thread.sleep(500);
+		fab.FromStation("shiggaon");
+		fab.getFromsuggestion().click();
+		
+		fab.getToStationclick().click();
+		fab.ToStation("bangalore");
+		Thread.sleep(500);
+		fab.getTosuggestion().click();
+		
+		fab.getOnwardDate().click();
+		Thread.sleep(500);
+		fab.getNextbtn().click();
+		fab.getSelectday().click();
+		
+		Thread.sleep(500);
+		fab.getSearchBusBtn().click();
+		
+		
+	}
+	
+	@Test(priority = 1)
+	public void testSitandFeature() throws InterruptedException {
+		
+		pr = new Properties();
+		spf = new SitandPricePage(driver);
+		
+		spf.getAvailsit().click();
+		Thread.sleep(1000);
+		
+//		spf.getSelectprice().click();
+//		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(0, 800)");
+		Thread.sleep(1000);
+		spf.getSelectsit().click();
+		Thread.sleep(1000);
+		spf.getNextbtn().click();
+		Thread.sleep(500);
+		spf.getSelectboarding().click();
+		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(0, 1500)");
+			
+		spf.getSelectdroping().click();
+	}
+	
+	@Test(priority = 2)
+	public void testPassengerDetsils() throws InterruptedException {
+		
+		pr = new Properties();
+		pdp = new PassengerDtsPage(driver);
+		
+		pdp.getMobiletext().sendKeys(mobileno);
+		
+//		pdp.getEmailtxt().click();
+		pdp.getPassengername().sendKeys(passengername); // experiment
+		Thread.sleep(1000);
+		pdp.getEmailtxt().sendKeys(emailtxt); // experiment
+
+				
+		pdp.getAgetxt().sendKeys(age);
+		
+		Thread.sleep(1000);
+		pdp.radioM();
+		js.executeScript("window.scrollBy(0, 800)");
+
+		Thread.sleep(1000);
+
+		js.executeScript("document.querySelector(\"label[for='pass-terms']\").click()");
+		js.executeScript("document.querySelector(\"#block-ticket-btn\").click()");  //Uncomment this final execution happend
+		Thread.sleep(2000);
+		
+		
+		
+	}
+	
+	@Test (priority = 3)
+	public void testPrintTickets() {
+		
+		pr = new Properties();
+		ptp = new PrintTicketPage(driver);
+		
+		wtc.tabcontrol();
+		ptp.menubtn();
+		ptp.printtickets();
+		
+		ptp.getPnrtxt().sendKeys(pnr_code);
+		ptp.getdetails();
+		
+	}
+
+}

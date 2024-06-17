@@ -1,0 +1,65 @@
+package searchTest;
+
+import java.util.Properties;
+
+import org.testng.annotations.Test;
+
+import generics.baseTest;
+import pages.SitandFeaturePage;
+import pages.searchBusesPage;
+
+public class searchBusTest extends baseTest{
+	searchBusesPage sbp;
+	Properties pr;
+	SitandFeaturePage spf;
+	
+	
+	@Test (priority = 0)
+	public void testsearchbus() throws InterruptedException {
+		
+		pr = new Properties();
+		sbp = new searchBusesPage(driver);
+		
+		sbp.getFromstationclick().click();
+		Thread.sleep(500);
+		sbp.searchbusfrom("shiggaon");
+		sbp.getFromsuggestion().click();
+		
+		sbp.getToStationclick().click();
+		sbp.searchbusto("bangalore");
+		Thread.sleep(500);
+		sbp.getTosuggestion().click();
+		
+		sbp.getOnwardDate().click();
+		Thread.sleep(500);
+		sbp.getNextbtn().click();
+		sbp.getSelectday().click();
+		
+		Thread.sleep(500);
+		sbp.getSearchBusBtn().click();
+		
+		
+	}
+	
+	@Test(priority = 1)
+	public void testSitandFeature() throws InterruptedException {
+		
+		pr = new Properties();
+		spf = new SitandFeaturePage(driver);
+		
+		spf.getAvailsit().click();
+		Thread.sleep(1000);
+		
+		spf.getSelectprice().click();
+		Thread.sleep(500);
+		js.executeScript("window.scrollBy(0, 800)");
+		spf.getSelectsit().click();
+		spf.getNextbtn().click();
+		Thread.sleep(500);
+		spf.getSelectboarding().click();		
+		js.executeScript("window.scrollBy(0, 800)");
+		spf.getSelectdroping().click();
+	}
+	
+
+}

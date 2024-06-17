@@ -1,0 +1,108 @@
+package pages;
+
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PassengerDtsPage {
+	
+	WebDriver driver;
+	  
+	  //constructor
+	  
+	  public PassengerDtsPage(WebDriver driver) {
+	  
+		  this.driver = driver; 
+	  
+		  PageFactory.initElements(driver, this); 
+	  }
+	  
+	  @FindBy(xpath = "(//input[@id='pass-mobile'])[1]") private WebElement mobiletext;
+	  
+	  @FindBy(xpath = "//input[@placeholder='E-mail']") private WebElement emailtxt;
+	  
+	  @FindBy(xpath = "(//input[@placeholder='Name'])[1]") private WebElement passengername;
+	  
+	  @FindBy(xpath = "(//input[@placeholder='Age'])[1]") private WebElement agetxt;
+	  
+	  @FindBy(xpath = "//label[text()='Male']") private WebElement radioM;
+	  
+	  
+	  @FindBy(xpath = "(//input[@type='checkbox'])[2]") private WebElement tAndC;
+	  
+	  @FindBy(xpath = "//button[@id='block-ticket-btn' and text()='Continue']") private WebElement continuebtn;
+	  
+	  
+
+	
+	  // add getter  methods
+	  
+		
+	public WebElement getMobiletext() {
+		return mobiletext;
+	}
+
+	
+
+	public WebElement getEmailtxt() {
+		return emailtxt;
+	}
+
+
+
+	public WebElement getPassengername() {
+		return passengername;
+	}
+
+	public WebElement getAgetxt() {
+		return agetxt;
+	}
+
+	public WebElement getRadioM() {
+		return radioM;
+	}
+
+	
+	
+	public WebElement getContinuebtn() {
+		return continuebtn;
+	}
+
+
+
+	public WebElement gettAndC() {
+		return tAndC;
+	}
+
+
+
+	public void radioM() {
+		radioM.click();
+	}
+	public void TandC() {
+		tAndC.click();
+	}
+	  
+	public void continuebtn() {
+		continuebtn.click();
+	}
+	
+	public void submitbtnclick() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		try {
+			js.executeScript("document.querySelector(\"#block-ticket-btn\").click()");  //Uncomment this final execution happend
+		}catch(NoSuchElementException | WebDriverException e) {
+			
+		}
+		
+		
+		
+	}
+
+}

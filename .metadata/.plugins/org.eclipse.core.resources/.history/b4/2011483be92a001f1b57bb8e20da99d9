@@ -1,0 +1,25 @@
+package generics;
+
+import org.openqa.selenium.By;
+
+public class WindowandTabControl extends baseTest{
+	
+	protected String originalWindow;
+	
+	public void tabcontrol (){
+		
+		originalWindow = driver.getWindowHandle();
+//		assert driver.getWindowHandles().size() == 1;
+//		driver.findElement(By.linkText("new window")).click();
+		
+		
+		for(String windowHandle : driver.getWindowHandles()) {
+			
+			if(!originalWindow.contentEquals(windowHandle)) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
+		}
+	}
+
+}
