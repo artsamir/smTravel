@@ -1,4 +1,4 @@
-# smTravel Project
+# SMTravel Project
 
 ## Overview
 The `smTravel` project is a travel booking automation application designed to assist users in booking bus tickets. It offers several functionalities, including finding buses, selecting passenger details, printing tickets, and viewing seat availability and prices.
