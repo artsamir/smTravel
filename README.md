@@ -5,9 +5,33 @@ The `smTravel` project is a travel booking automation application designed to as
 
 The project follows a modular architecture with pages for each of the main functionalities. It also integrates testing for these features through `TestNG`.
 
+## SM Travel Project TechStack
+
+This document outlines the technology stack used in the **SM Travel Project**.
+
+### Testing Frameworks
+
+- **TestNG**: A testing framework designed for test configuration, prioritization, grouping, and parallel execution, making it easy to handle different kinds of testing scenarios.
+- **Selenium**: A popular tool for automating web browsers, used for creating functional and regression tests for web applications.
+
+### Programming Languages
+
+- **Java**: The core programming language for implementing test cases and business logic, enabling efficient backend interaction and integration testing.
+
+### Tools & Libraries
+
+- **Maven**: For project management and building the application. It helps with dependency management and automating project build processes.
+- **Git**: Version control system used to manage the codebase. It allows multiple developers to collaborate efficiently.
+
+### Browser Automation
+
+- **ChromeDriver**: A WebDriver for Chrome used in Selenium tests for automating interactions with Google Chrome.
+- **FirefoxDriver**: Another WebDriver that can be used for Firefox browser automation with Selenium.
+
+
 ## Directory Structure
 Below is the directory structure of the `smTravel` project:
-
+![smtravel folder structure](https://github.com/user-attachments/assets/1622ae65-b229-4e66-8a56-528cdfed50d4)
 
 ## Pages Overview
 ### 1. FindABusPage.java
@@ -36,31 +60,94 @@ The project includes a `config.properties` file that holds various configuration
 
 Below are some relevant screenshots from the project:
 
-### 1. Screenshot of FindABusPage:
-![FindABusPage Screenshot](path/to/findabuspage_screenshot.png)
+![image](https://github.com/artsamir/smTravel/assets/155747719/7073e053-17f1-4f64-93b3-6a1eea91e888)
+![image](https://github.com/artsamir/smTravel/assets/155747719/43ac8b80-a861-404d-b003-1c53199e1ccd)
+![image](https://github.com/artsamir/smTravel/assets/155747719/ff77d536-c047-490a-9b78-dfdb49c0bffa)
 
-### 2. Screenshot of Passenger Details:
-![Passenger Details Screenshot](path/to/passengerdts_screenshot.png)
+# Test Execution Status Report
 
-### 3. Screenshot of Ticket Printing:
-![Ticket Printing Screenshot](path/to/printticket_screenshot.png)
+## Test Execution Status
 
-### 4. Screenshot of Seat and Price Page:
-![Seat and Price Page Screenshot](path/to/sitandprice_screenshot.png)
+| **Test Case**              | **Status**    | **Description**                                                                 | **Execution Time** | **Notes**                             |
+|----------------------------|---------------|---------------------------------------------------------------------------------|--------------------|---------------------------------------|
+| `testsearchbus`             | ✅ Passed     | Tests the functionality of searching for a bus by selecting from and to stations, date, and clicking the search button. | [Time]             | No issues detected                   |
+| `testSitandFeature`         | ✅ Passed     | Verifies the functionality of selecting seats, scrolling to view available seats, and choosing boarding and drop-off locations. | [Time]             | All interactions were successful      |
+| `testPassengerDetsils`      | ✅ Passed     | Validates passenger details entry such as mobile number, name, email, age, gender, and acceptance of terms. | [Time]             | All fields entered correctly          |
+| `testPrintTickets`          | ✅ Passed     | Verifies the printing of tickets by navigating back, accepting alerts, and retrieving PNR details. | [Time]             | Ticket details retrieved successfully |
 
-## Dependencies
-The project uses Maven for dependency management. Below is the basic configuration in `pom.xml`:
+---
 
-```xml
-<dependencies>
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.5.0</version>
-        <scope>test</scope>
-    </dependency>
-    <!-- Other dependencies -->
-</dependencies>
+## Summary of Test Execution:
+
+| **Metric**                 | **Count**      |
+|----------------------------|----------------|
+| **Total Tests**             | 4              |
+| **Passed**                  | 4              |
+| **Failed**                  | 0              |
+| **Skipped**                 | 0              |
+| **Execution Status**        | ✅ All tests passed successfully!  |
+
+---
+
+## Execution Details:
+
+- **Test Environment**: [Browser, OS Details]
+- **Test Date**: [Execution Date]
+- **Executed By**: [Your Name or Team]
+
+---
+
+## Conclusion:
+All tests in this suite were executed successfully without any failures or skipped tests. The features for bus search, seat selection, passenger details entry, and ticket printing are working as expected.
+
+---
+
+### Attachments:
+- [Log File / TestNG Report / Allure Report (if applicable)]
+
+
+## Installation
+
+To get started with smTravel, follow the steps below:
+
+### Prerequisites
+
+- **Java 11** or later
+- **Maven** for project management
+- **TestNG** for test execution
+
+### Steps
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/artsamir/smTravel.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd smTravel
+    ```
+
+3. **Install dependencies using Maven:**
+
+    ```bash
+    mvn clean install
+    ```
+
+4. **Run the tests:**
+
+    ```bash
+    mvn test
+    ```
+
+   You can also configure TestNG settings and run tests in parallel for faster execution.
+
+## How It Works
+
+- The **Page Object Model (POM)** is implemented to separate the UI logic from test scripts. Each page has a corresponding page class, making the code easier to maintain and extend.
+- **TestNG** handles test execution, parallelization, and generates comprehensive reports after each run.
 
 
 
