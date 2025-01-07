@@ -31,7 +31,7 @@ This document outlines the technology stack used in the **SM Travel Project**.
 
 ## Directory Structure
 Below is the directory structure of the `smTravel` project:
-![smtravel folder structure](https://github.com/user-attachments/assets/1622ae65-b229-4e66-8a56-528cdfed50d4)
+- ![smtravel folder structure](https://github.com/user-attachments/assets/1622ae65-b229-4e66-8a56-528cdfed50d4)
 
 ## Pages Overview
 ### 1. FindABusPage.java
@@ -101,9 +101,6 @@ Below are some relevant screenshots from the project:
 All tests in this suite were executed successfully without any failures or skipped tests. The features for bus search, seat selection, passenger details entry, and ticket printing are working as expected.
 
 ---
-
-### Attachments:
-- [Log File / TestNG Report / Allure Report (if applicable)]
 
 
 ## Installation
