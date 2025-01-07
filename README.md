@@ -68,12 +68,12 @@ Below are some relevant screenshots from the project:
 
 ## Test Execution Status
 
-| **Test Case**              | **Status**    | **Description**                                                                 | **Execution Time** | **Notes**                             |
-|----------------------------|---------------|---------------------------------------------------------------------------------|--------------------|---------------------------------------|
-| `testsearchbus`             | ✅ Passed     | Tests the functionality of searching for a bus by selecting from and to stations, date, and clicking the search button. | [Time]             | No issues detected                   |
-| `testSitandFeature`         | ✅ Passed     | Verifies the functionality of selecting seats, scrolling to view available seats, and choosing boarding and drop-off locations. | [Time]             | All interactions were successful      |
-| `testPassengerDetsils`      | ✅ Passed     | Validates passenger details entry such as mobile number, name, email, age, gender, and acceptance of terms. | [Time]             | All fields entered correctly          |
-| `testPrintTickets`          | ✅ Passed     | Verifies the printing of tickets by navigating back, accepting alerts, and retrieving PNR details. | [Time]             | Ticket details retrieved successfully |
+| **Test Case**              | **Status**    | **Description**                                                                 | **Notes**                             |
+|----------------------------|---------------|---------------------------------------------------------------------------------|---------------------------------------|
+| `testsearchbus`             | ✅ Passed     | Tests the functionality of searching for a bus by selecting from and to stations, date, and clicking the search button. |  No issues detected                   |
+| `testSitandFeature`         | ✅ Passed     | Verifies the functionality of selecting seats, scrolling to view available seats, and choosing boarding and drop-off locations. |  All interactions were successful      |
+| `testPassengerDetsils`      | ✅ Passed     | Validates passenger details entry such as mobile number, name, email, age, gender, and acceptance of terms. |  All fields entered correctly          |
+| `testPrintTickets`          | ✅ Passed     | Verifies the printing of tickets by navigating back, accepting alerts, and retrieving PNR details. |  Ticket details retrieved successfully |
 
 ---
 
@@ -91,9 +91,9 @@ Below are some relevant screenshots from the project:
 
 ## Execution Details:
 
-- **Test Environment**: [Browser, OS Details]
-- **Test Date**: [Execution Date]
-- **Executed By**: [Your Name or Team]
+- **Test Environment**: [Chome, Windows 10]
+- **Test Date**: [Jun 17 2024]
+- **Executed By**: [Samir Saren]
 
 ---
 
